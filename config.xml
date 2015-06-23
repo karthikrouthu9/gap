@@ -140,7 +140,7 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
-    <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" />
+    
 
     
         <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
