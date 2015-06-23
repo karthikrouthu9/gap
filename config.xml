@@ -27,8 +27,8 @@
        This is a Phonegap Application
 	   </description>
 
-    <author href="http://cordova.io" email="dev@cordova.apache.org">
-        Apache Cordova Team
+    <author href="http://phonegap.io" email="dev@phonegap.apache.org">
+        Apache Phonegap Team
     </author>
 
     <access origin="*"/>
@@ -60,11 +60,5 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
     <!-- Deprecated plugins element. Remove in 3.0 -->
-    <plugins>
-    	
-    
-	<plugin name="Device" value="org.apache.cordova.Device" />
-        <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
-        <plugin name="Storage" value="org.apache.cordova.Storage"/>
-       </plugins>
+   
 </widget>
