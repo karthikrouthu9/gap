@@ -141,7 +141,7 @@
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
     <gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" />
-<gap:plugin name="com.vliesaputra.deviceinformation" />
+
     
         <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
         <plugin name="Storage" value="org.apache.cordova.Storage"/>
