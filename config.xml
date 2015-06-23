@@ -18,7 +18,7 @@
  under the License.
 -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
-        id        = "io.phonegap.helloPhonegap"
+        id        = "web.application.attendancesystem"
         version   = "2.0.0"
         xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Attendance System</name>
@@ -35,7 +35,7 @@
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
-
+	<preference name="phonegap-version" value="3.0.0" />
     <preference name="loglevel" value="DEBUG" />
       <preference name="SplashScreen" value="splash" />
       <preference name="backgroundColor" value="0xFFF" />
@@ -50,6 +50,9 @@
     <splash src="res/screen/android/homecare_logo.png" density="port-mdpi"/>
     <splash src="res/screen/android/homecare_logo.png" density="port-xhdpi"/>
   </platform>
+  <gap:plugin name="org.apache.cordova.core.camera" />
+<gap:plugin name="org.apache.cordova.core.geolocation" />
+<gap:plugin name="org.apache.cordova.core.dialogs" />
     	<feature name="http://api.phonegap.com/1.0/battery"/>
     <feature name="http://api.phonegap.com/1.0/camera"/>
     <feature name="http://api.phonegap.com/1.0/contacts"/>
