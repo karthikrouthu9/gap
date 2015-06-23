@@ -124,7 +124,7 @@
     <plugins>
     	
     
-
+	<plugin name="Device" value="org.apache.cordova.Device" />
         <plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
         <plugin name="Storage" value="org.apache.cordova.Storage"/>
        </plugins>
