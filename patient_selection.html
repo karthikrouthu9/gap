@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width">
+  
+	<title>Attendance Tracking System</title>
+			
+<style>
+.form-links a {
+		color: #fff;
+	}</style>
+
+ <link href="bootstrap-3.3.4/css/bootstrap.css" rel="stylesheet">
+
+<link rel="stylesheet" href="bootstrap-3.3.4/css/bootstrap.min.css" media="screen" type="text/css" />
+     		<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    		<script src="jquery-1.11.2.js"></script>
+    		<script type="text/javascript" src="cordova.js"></script>
+  
+<script>
+    		
+    
+    
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+    
+    function onDeviceReady() {
+   
+   var device_uuid = device.uuid;
+   
+   var networkState = navigator.connection.type;
+    if (networkState == Connection.NONE)
+    {
+      window.location='./first_screen.html';
+               return false;
+    
+    }
+    
+   //$.post( "http://192.168.0.99:8087/my_drupal_site/?q=my_services/m_resources/get_patient_list" ,{device_uuid:device_uuid},
+   //	  function( data ) 
+   //	  {
+   //    var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings","list_of_patients":"data"}';
+	
+   //obj = JSON.parse(json);
+
+	
+	
+    //            window.location='./first_screen.html';
+    //           return false;
+   // }
+   // else
+   // {
+  //  
+  //  return false;
+	//}
+	
+	
+	 var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings","list_of_patients":"data"}';
+			obj = JSON.parse(json);
+			
+			
+	
+			
+	var json = [{
+    "patient_uuid"   : "74125896321456987532145698521458", 
+    "patient_name"   : "Karthik Routhu",
+    "business_uuid"  : "74125896321456987862145698521456",
+    "business_name"  : "Daniel Jarvis Health Agency",
+    "visit_type"     : "ST Re-evaluation",
+    "visit_type_id"  : "01",
+	"visit_uuid"     : "11325896321456987532145698521456",
+	"sch_start_time" : "12:00",
+	"sch_end_time"   : "14:30",
+	"user_id"        : "1212312454545454545636365887595624"
+},
+{
+    "patient_uuid"   : "74125896321456987532145698521451", 
+    "patient_name"   : "Jane Johnson",
+    "business_uuid"  : "74125896321456987532145698521456",
+	"business_name"  : "Logos Health Agency",
+    "visit_type"     : "OT Re-evaluation",
+	"visit_type_id"  : "02",
+	"visit_uuid"     : "11125896321456987532145698521456",
+	"sch_start_time" : "10:00",
+	"sch_end_time"   : "11:30",
+	"user_id"        : "1212312454545454545636365887597724"
+}];		
+			
+			var j=1;
+			var data=''; 
+			for(var i = 0; i < json.length; i++) {
+    		var obj = json[i];
+	
+	
+data ='  <div class="panel panel-default"> <div class="panel-heading"><h4 class="panel-title"><span style="color: #1357A6;"> <a data-toggle="collapse"  data-parent="#accordion" href="#collapse'+j+'"><span class=" glyphicon glyphicon-user"></span><span style="font-size: 17px; color: #1357A6;"> '+obj.patient_name+'<span style="float: right; font-size: 16px; "></span> <a href="map.html?visit_uuid='+obj.visit_uuid+'&visit_type_id='+obj.visit_type_id+'&patient_uuid='+obj.patient_uuid+'&user_id='+obj.user_id+'"><span style="float: right; font-size: 16px; color: #1357A6;"> <span class=" glyphicon glyphicon-time"></span> '+obj.sch_start_time+'-'+obj.sch_end_time+' </span></a></h4>      </div>      <div id="collapse'+j+'" class="panel-collapse collapse"> <span style="font-size: 16px; color: #1357A6;" >      <div class="panel-body"> <span class=" glyphicon glyphicon-home"></span> '+obj.business_name+'</div>      <span style="padding: 16px;">   <a href="map.html?visit_uuid='+obj.visit_uuid+'&visit_type_id='+obj.visit_type_id+'&patient_uuid='+obj.patient_uuid+'&user_id='+obj.user_id+'"><span class=" glyphicon glyphicon-bed"></span> '+obj.visit_type+'<span style="float: right;padding-right: 20px; "><span class=" glyphicon glyphicon-time"></span> '+obj.sch_start_time+'-'+obj.sch_end_time+' </span></a> </span>                         </div>   </div>'+data;
+		
+			j++;
+			 }
+			
+			document.getElementById("accordion").innerHTML =data ;
+			}
+			
+
+	$('#collapse2').on('.panel-collapse.collapse'), function() {
+	$(".servicedrop").addClass('glyphicon-chevron-up').removeClass('glyphicon-chevron-down');
+  }
+
+$('#collapse2').on('.panel-collapse.collapse.in'), function() {
+    $(".servicedrop").addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+  }
+  
+        </script>
+</head>
+
+<body onload="onDeviceReady()">
+  
+
+  <style type="text/css">/* 1st level */
+.nav label {
+	color: blue;
+}
+
+/* 2nd level */
+.tree > li > label {
+  padding:10px 15px;  
+}
+body {
+	background-image: url("ats_background.jpg");
+    
+   
+    background-size: cover;
+    overflow-y: hidden;
+     }
+h3
+{
+color:black;
+}
+
+</style>
+
+  
+<style type="text/css"></style></head>
+<body cz-shortcut-listen="true">
+  <div class="container">
+  <div class="row">
+  <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            
+			<div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="homecare_logo.png" alt style="height: 39px;margin-top: -8px;"">
+                </a>
+            </div>
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+					<li>
+                        <a href="log-in.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-sm-12">
+            
+                <h3><center>Patient's List</center></h3>
+     <div class="row">
+      <div class="col-lg-12 col-sm-12 col-sm-12">
+          <div class="well"style="
+    margin-top: 47px";
+          >
+           <b><center><h4>Today's Schedules</h4></center></b>
+           Touch on Patient Name and then on Visit Type to proceed further into the application
+           <br>
+           <br>
+              
+            
+   
+  
+  <div class="panel-group" id="accordion">
+
+  
+
+  </div> 
+
+   <input type="hidden" class="form-control input-lg" id="device_uuid"/>
+          
+  <script>
+  </script>
+  
+  <!--scripts loaded here-->
+  
+  <script src="./Codeply preview_files/jquery.min.js"></script>
+  <script src="./Codeply preview_files/bootstrap.min.js"></script>
+  
+  
+  
+  <script>
+  $('.tree-toggle').click(function () {
+ 
+	$(this).parent().children('ul.tree').toggle(200);
+});
+  </script>
+ <div class="form-links">
+     
+        </div>
+        
+      </div>
+      <div class="col-md-4">
+      </div>
+</body>
+<center><a href="http://www.ondemandhomecare.com/" style="color: #FFFFFF ">www.ondemandhomecare.com</a></center>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+  <title>Attendance Monitoring System - Login Form</title>
+<link rel='stylesheet' href='register.css' type='text/css'/> 
+		<meta name="viewport" content="width=device-width">	
+    		<link rel="stylesheet" href="bootstrap-3.3.4/css/bootstrap.min.css" media="screen" type="text/css" />
+     		<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    		
+    		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    		<script src="jquery-1.11.2.js"></script>
+    		<script type="text/javascript" src="cordova.js"></script>
+    		
+    		
+    		  <script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
+         <script src="bootbox.js"></script>
+        <script src="bootbox.min.js"></script>
+<script>
+    		
+    
+    
+      document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+    
+   
+        var element = document.getElementById('deviceProperties');
+ 
+
+ 
+       var device_test = device.uuid;
+       
+          
+ var networkState = navigator.connection.type;
+    if (networkState == Connection.NONE)
+    {
+       var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings"}';
+
+	obj = JSON.parse(json);
+
+	
+
+	document.getElementById("bootstrap").innerHTML = "<div class='alert alert-danger' role='alert'>Please Check Internet Connection Settings</div>";
+	
+ 				window.location='./first_screen.html';
+                return true;
+               
+    }
+    else
+    {
+       
+	
+	}
+			
+			}
+			
+			
+			
+			
+	function check_forgot_pin()
+		{
+
+			var element = document.getElementById('deviceProperties');
+ 			var device_test = device.uuid;
+			var email = $('#registrationcode1').val();
+ 
+       
+    
+     var networkState = navigator.connection.type;
+    if (networkState == Connection.NONE)
+    {
+       var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings"}';
+
+	obj = JSON.parse(json);
+
+	
+
+	document.getElementById("bootstrap").innerHTML = "<div class='alert alert-danger' role='alert'>Please Check Internet Connection Settings</div>";
+	
+ 				window.location='./first_screen.html';
+                return true;
+               
+    }
+    else
+    {
+
+
+		
+		var username = document.getElementById("registrationcode1").value;
+		
+			if (username)
+			{
+//$.post( "http://192.168.0.99:8087/my_drupal_site/?q=my_services/m_resources/forgot_pin" , { registered_email_id:encodeURIComponent(email),	device_uuid:encodeURIComponent(device_test)},     
+
+var json ='{"result":"I-20001 :" ,"message": "Log-in PIN has been sent to your Email Successfully.","result_id":"I-20002"}';
+
+
+	obj = JSON.parse(json);
+
+
+
+bootbox.dialog({
+  message: obj.message,
+  title: "Message",
+  buttons: {
+    success: {
+      label: "OK",
+      className: "btn-success",
+      callback: function() {
+  
+     window.location='./log-in.html';
+    
+      }
+    
+    }
+    
+    
+  }
+});
+
+
+
+
+
+return false;
+			
+			}
+else			 
+{
+
+
+document.getElementById("bootstrap").innerHTML = "<div class='alert alert-danger' role='alert'>Please enter registered email </div>";
+
+
+return false;
+}
+
+
+    }
+    
+
+		}	
+			
+			
+			
+        </script>
+</head>
+
+<body onload="onDeviceReady()">
+
+<body>
+<div class="container">
+  
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+   
+   
+    <div class="col-md-4">
+      <section class="login-form">
+                    <span id="bootstrap"></span>
+      <form method="post" action="log-in.html" onsubmit="return check_forgot_pin();" role="login">
+          <img src="homecare_logo.png" class="img-responsive" alt="" style="HEIGHT:62PX;"/>
+           <b><center><h4>Forgot PIN</h4></center></b>
+      
+          <input type="username" name="registrationcode" placeholder="Enter Portal Registered Email"  class="form-control input-lg" id="registrationcode1"/>
+          Log-In PIN will be sent to your registered email address. In case you don't remember registered email address<p><a href="recovery_for_forgot_pin.html"><center>Get your PIN thru alternative method</center></a></p>
+                    
+          <button type="submit" name="go" class="btn btn-lg btn-primary btn-block" style="
+    background-color: #1357A6;
+">Send Device Log-In PIN</button>
+          
+          
+         
+          
+        </form>
+        
+        <div class="form-links">
+          <a href="http://www.ondemandhomecare.com/">www.ondemandhomecare.com</a>
+        </div>
+      </section>  
+      </div>
+      
+      <div class="col-md-4"></div>
+      
+
+  </div>
+  
+  <p>
+    <br>
+    <br>
+    
+  </p>     
+  
+  
+</div>
+</body>
+
+</html>
