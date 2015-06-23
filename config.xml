@@ -31,7 +31,7 @@
         Apache Phonegap Team
     </author>
 
-    <access origin="*.googleapis.com"/>
+    <access origin="*"/>
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
