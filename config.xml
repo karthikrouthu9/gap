@@ -79,8 +79,7 @@
     </feature>
     <feature name="NetworkStatus">
       <param name="android-package" value="org.apache.cordova.NetworkManager"/>
-      <feature name="Network Information">
-    	<param name="id" value="org.apache.cordova.network-information" />
+      
       
     </feature>
     <feature name="Notification">
