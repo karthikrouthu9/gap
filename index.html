@@ -63,13 +63,13 @@ $.post( "http://183.82.96.212:8080/my_drupal_site/?q=my_services/m_resources/is_
 	 
   if(data>=1)
       {
-          
+          navigator.geolocation.getCurrentPosition(onSuccess, onError);
      window.location='log-in.html';
       return false;
       }
       else
       {
-          
+          navigator.geolocation.getCurrentPosition(onSuccess, onError);
            window.location='registration.html';
              return false;
       }
@@ -84,6 +84,18 @@ $.post( "http://183.82.96.212:8080/my_drupal_site/?q=my_services/m_resources/is_
 	}
 			
 			}
+			
+			
+			function onSuccess(position) {
+alert(" GPS ON");
+}
+
+// onError Callback receives a PositionError object
+//
+function onError(error) {
+alert(" GPS OFF");
+
+}
         </script>
 </head>
 
