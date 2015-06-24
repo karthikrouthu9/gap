@@ -1,13 +1,13 @@
 html
 {
 height: 100%;
-    overflow: hidden;
+    
     }
 body {
 	background-image: url("ats_background.jpg");
     
    height: 100%;
-    overflow: hidden;
+   
     background-size: cover;
     
      }
