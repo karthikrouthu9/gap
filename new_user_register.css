@@ -4,7 +4,8 @@ body {
     
    
     background-size: cover;
-    position: relative
+    position: relative;
+    overflow-y: hidden;
 
 }
 
