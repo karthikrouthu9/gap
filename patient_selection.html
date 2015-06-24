@@ -51,11 +51,22 @@
     //            window.location='./first_screen.html';
     //           return false;
    // }
-   // else
-   // {
-  //  
+    else
+    {
+  alert("kkk");
+   navigator.geolocation.getCurrentPosition(onSuccess, onError);
+   
+   function onSuccess(position) {
+   alert(GPS ON);
+      
+   }
+   function onError(error) {
+alert(GPS OFF);
+				}
+	   			
+    
   //  return false;
-	//}
+	}
 	
 	
 	 var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings","list_of_patients":"data"}';
