@@ -1,3 +1,22 @@
+html
+{
+height: 100%;
+    overflow: hidden;
+    }
+body {
+	background-image: url("ats_background.jpg");
+    
+   height: 100%;
+    overflow: hidden;
+   
+    
+     }
+
+
+.login-form {
+	margin-top: 60px;
+	
+}
 
 form[role=login] {
 	color: #5d5d5d;
