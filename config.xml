@@ -32,13 +32,11 @@
     </author>
 
     <access origin="*"/>
-  <access origin="*://*.googleapis.com/*" subdomains="true" />
-<access origin="*://*.gstatic.com/*" subdomains="true" />
-<access origin="*://*.google.com/*" subdomains="true" />
-<access origin="*://*.googleusercontent.com/*" subdomains="true" />
+  
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
+    <preference name="stay-in-webview" value="true" />
 	<preference name="phonegap-version" value="3.0.0" />
     <preference name="loglevel" value="DEBUG" />
       <preference name="SplashScreen" value="splash" />
