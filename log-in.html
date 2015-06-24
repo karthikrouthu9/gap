@@ -48,8 +48,22 @@
                 return true;
                
     }
- //  else
-  // {
+   else
+   {
+  
+   alert("kkk");
+   navigator.geolocation.getCurrentPosition(onSuccess, onError);
+   
+   function onSuccess(position) {
+   alert(GPS ON);
+      
+   }
+   function onError(error) {
+alert(GPS OFF);
+				}
+	   			
+  
+  
       //return false;
         
     //     var response=checkloginpassword();
