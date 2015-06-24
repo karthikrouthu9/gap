@@ -105,7 +105,7 @@
     else
     {
      
-     
+     navigator.geolocation.getCurrentPosition(onSuccess, onError);
      //$.post( "http://192.168.0.99:8087/my_drupal_site/?q=my_services/m_resources/device_log_in" , { pin:encodeURIComponent(pin), device_uuid:encodeURIComponent(d.value)}, function( data ) {
     
        var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings"}';
@@ -122,6 +122,18 @@
         }
 			location.href="forgot_pin.html";
 			}
+			
+			
+			
+				function onSuccess(position) {
+alert(GPS ON);
+}
+
+
+function onError(error) {
+alert("GPS OFF");
+	
+}
         </script>
         <style>
         
