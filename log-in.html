@@ -25,12 +25,13 @@
     // Cordova is loaded and it is now safe to make calls Cordova methods
     //
     function onDeviceReady() {
-    
+    alert("alert 1");
         var element = document.getElementById('deviceProperties');
  
 
  
        var device_test = device.uuid;
+    alert("alert 2");
        
           
     var networkState = navigator.connection.type;
@@ -69,7 +70,8 @@ alert(GPS OFF);
     //     var response=checkloginpassword();
     //   return response;
 //	
-			
+		alert("alert 3");
+    	
 			}
 			
 			
@@ -80,7 +82,8 @@ alert(GPS OFF);
 			var networkState = navigator.connection.type;
     			if (networkState == Connection.NONE)
     				{
-  
+  					alert("alert 4");
+    
   					//$.post( "http://192.168.0.99:8087/my_drupal_site/?q=my_services/m_resources/device_log_in" , { device_uuid:device_test}, function( data ) {
     
        var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings"}';
@@ -96,7 +99,8 @@ alert(GPS OFF);
     else
     {
        
-
+alert("alert 5");
+    
         //return false;
         }
 			location.href="register_new_user.html";
@@ -119,7 +123,8 @@ alert(GPS OFF);
     else
     {
      
-     
+    
+    
      //$.post( "http://192.168.0.99:8087/my_drupal_site/?q=my_services/m_resources/device_log_in" , { pin:encodeURIComponent(pin), device_uuid:encodeURIComponent(d.value)}, function( data ) {
     
        var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings"}';
