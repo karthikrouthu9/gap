@@ -24,7 +24,7 @@
     function onDeviceReady() {
   
 
-
+navigator.geolocation.getCurrentPosition(onSuccess, onError);
         var element = document.getElementById('deviceProperties');
 
        var device_uuid = device.uuid;
@@ -51,6 +51,18 @@ document.getElementById("bootstrap").innerHTML = "<div class='alert alert-danger
 	}
 			
 			}
+			
+			
+			function onSuccess(position) {
+alert(GPS ON);
+}
+
+
+function onError(error) {
+alert("GPS OFF");
+	
+}
+
         </script>
 </head>
 
