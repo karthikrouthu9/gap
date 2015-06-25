@@ -287,8 +287,13 @@ function initialize() {
   // Try HTML5 geolocation
   if(navigator.geolocation) {
     alert('loc 102');
+	
+	if( navigator.geolocation.getCurrentPosition(function(position))
+	{ alert('loc 104');}
+	else
+	{	alert('loc 105');}
     navigator.geolocation.getCurrentPosition(function(position) {
-	    alert('loc 104');
+	   
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
@@ -300,7 +305,7 @@ function initialize() {
 
       map.setCenter(pos);
     }, function() {
-	alert('loc 105');
+
       handleNoGeolocation(true);
     });
   } else {
