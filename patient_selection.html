@@ -18,7 +18,7 @@
      		<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
     		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     		<script src="jquery-1.11.2.js"></script>
-    		<script type="text/javascript" src="cordova.js"></script>
+    		<script type="text/javascript" src="phonegap.js"></script>
   
 <script>
     		
@@ -29,6 +29,20 @@
     
     function onDeviceReady() {
    alert("alert 1");
+
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+   
+   function onSuccess(position) {
+   alert(GPS ON);
+      
+   }
+   function onError(error) {
+		alert(GPS OFF);
+				}
+	   			
+
+
+
    var device_uuid = device.uuid;
    
    var networkState = navigator.connection.type;
@@ -67,16 +81,6 @@
     
   //  return false;
 //	}
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-   
-   function onSuccess(position) {
-   alert(GPS ON);
-      
-   }
-   function onError(error) {
-		alert(GPS OFF);
-				}
-	   			
 	
 	 var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings","list_of_patients":"data"}';
 			obj = JSON.parse(json);
