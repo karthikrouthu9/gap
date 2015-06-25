@@ -67,7 +67,16 @@
     
   //  return false;
 //	}
-	
+	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+   
+   function onSuccess(position) {
+   alert(GPS ON);
+      
+   }
+   function onError(error) {
+		alert(GPS OFF);
+				}
+	   			
 	
 	 var json ='{"result":"E-10003 :" ,"message": "Please Check Internet Connection Settings","list_of_patients":"data"}';
 			obj = JSON.parse(json);
