@@ -25,13 +25,12 @@
     // Cordova is loaded and it is now safe to make calls Cordova methods
     //
     function onDeviceReady() {
-    alert("alert 1");
+   
         var element = document.getElementById('deviceProperties');
  
 
  
        var device_test = device.uuid;
-    alert("alert 2");
        
           
     var networkState = navigator.connection.type;
@@ -52,26 +51,39 @@
    else
    {
   
-   alert("kkk");
-   navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    function foo() {
+
+
+cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
+
+//alert('result='+enabled);	
+//alert("Location is " + (enabled ? "enabled" : "disabled"));
+if(enabled==0)
+	{
+	alert('go to settings');
+	 cordova.plugins.diagnostic.switchToLocationSettings();
+	
+	}else
+	{
+}
+    //console.log("Location is " + (enabled ? "enabled" : "disabled"));
+}, function(error){
+//alert('!!!!!!!!go to settings');
+    console.error("The following error occurred: "+error);
+});
+
+    setTimeout(foo, 2000);
+}
+
+foo();
    
-   function onSuccess(position) {
-   alert(GPS ON);
-      
-   }
-   function onError(error) {
-alert(GPS OFF);
-				}
-	   			
-  
   
       //return false;
         
     //     var response=checkloginpassword();
     //   return response;
 //	
-		alert("alert 3");
-    	
+ 	
 			}
 			
 			
