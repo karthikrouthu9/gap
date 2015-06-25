@@ -340,8 +340,8 @@ function foo() {
 
 cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
 
-alert('result='+enabled);	
-alert("Location is " + (enabled ? "enabled" : "disabled"));
+//alert('result='+enabled);	
+//alert("Location is " + (enabled ? "enabled" : "disabled"));
 if(enabled==0)
 	{
 	alert('go to settings');
@@ -350,13 +350,13 @@ if(enabled==0)
 	}else
 	{
 }
-    console.log("Location is " + (enabled ? "enabled" : "disabled"));
+    //console.log("Location is " + (enabled ? "enabled" : "disabled"));
 }, function(error){
-alert('!!!!!!!!go to settings');
+//alert('!!!!!!!!go to settings');
     console.error("The following error occurred: "+error);
 });
 
-    setTimeout(foo, 5000);
+    setTimeout(foo, 2000);
 }
 
 foo();
