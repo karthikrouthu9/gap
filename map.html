@@ -345,6 +345,14 @@ cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
     console.error("The following error occurred: "+error);
 });
 
+cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
+	alert('go to settings');
+    console.log("Location is " + (enabled ? "enabled" : "disabled"));
+}, function(error){
+alert('!!!!!!!!go to settings');
+    console.error("The following error occurred: "+error);
+});
+
 // test
 window.onload = function(){date()}, setInterval(function(){date()}, 1000);
 
