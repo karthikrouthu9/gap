@@ -30,17 +30,8 @@
     function onDeviceReady() {
    alert("alert 1");
 
-	navigator.geolocation.getCurrentPosition(onSuccess, onError);
-   
-function onSuccess() {
 	
-   alert(GPS ON);
-      
-  }
-   function onError() {
-		alert(GPS OFF);
-				}
-
+   
    var device_uuid = device.uuid;
    
    var networkState = navigator.connection.type;
