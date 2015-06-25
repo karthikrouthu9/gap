@@ -74,9 +74,7 @@ cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
 if(enabled==0)
 	{
 	alert('Location is disabled. Please enable GPS.');
-	bootbox.confirm("Location is disabled. Please enable GPS.", function(result) {
-  Example.show("Confirm result: "+result);
-}); 
+	
 	 cordova.plugins.diagnostic.switchToLocationSettings();
 	
 	}else
