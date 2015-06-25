@@ -1,4 +1,4 @@
-cordova.plugins.diagnostic.switchToLocationSettings();cordova.plugins.diagnostic.switchToLocationSettings();<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 
@@ -335,30 +335,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 // test
 
-var options = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-function success(pos) {
-  var crd = pos.coords;
-alert('working');
-  console.log('Your current position is:');
-  console.log('Latitude : ' + crd.latitude);
-  console.log('Longitude: ' + crd.longitude);
-  console.log('More or less ' + crd.accuracy + ' meters.');
-};
-
-function error(err) {
-alert('ERROR');
-cordova.plugins.diagnostic.switchToLocationSettings();
-  console.warn('ERROR(' + err.code + '): ' + err.message);
-};
-
-
-
-navigator.geolocation.getCurrentPosition(success, error, options);
+cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
+    if(!enabled{
+	alert('go to settings');
+        cordova.plugins.diagnostic.switchToLocationSettings();
+    }
+}, function(error){
+	alert("The following error occurred: "+error);
+    console.error("The following error occurred: "+error);
+});
 
 // test
 window.onload = function(){date()}, setInterval(function(){date()}, 1000);
