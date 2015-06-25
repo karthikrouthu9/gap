@@ -334,10 +334,10 @@ function handleNoGeolocation(errorFlag) {
 	var loc_on=false;
 google.maps.event.addDomListener(window, 'load', initialize);
 
-  alert(loc_on);
 
-  navigator.geolocation.getCurrentPosition(function(){alert('sucess');}, function() {alert('error');});
-  
+
+  navigator.geolocation.getCurrentPosition(function(){	 loc_on=true;}, function() {alert('error');});
+  alert(loc_on);  
   
 window.onload = function(){date()}, setInterval(function(){date()}, 1000);
 
