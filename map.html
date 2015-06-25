@@ -288,11 +288,8 @@ function initialize() {
   if(navigator.geolocation) {
     alert('loc 102');
 	
-	if( navigator.geolocation.getCurrentPosition(function(position))
-	{ alert('loc 104');}
-	else
-	{	alert('loc 105');}
-    navigator.geolocation.getCurrentPosition(function(position) {
+	
+    var data=navigator.geolocation.getCurrentPosition(function(position) {
 	   
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
@@ -308,6 +305,7 @@ function initialize() {
 
       handleNoGeolocation(true);
     });
+	alert(data);
   } else {
     alert('loc 103');
     // Browser doesn't support Geolocation
