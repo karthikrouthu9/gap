@@ -53,31 +53,6 @@ document.getElementById("bootstrap").innerHTML = "<div class='alert alert-danger
     else
 {
     
-    function foo() {
-
-
-cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
-
-//alert('result='+enabled);	
-//alert("Location is " + (enabled ? "enabled" : "disabled"));
-if(enabled==0)
-	{
-	alert('go to settings');
-	 cordova.plugins.diagnostic.switchToLocationSettings();
-	
-	}else
-	{
-}
-    //console.log("Location is " + (enabled ? "enabled" : "disabled"));
-}, function(error){
-//alert('!!!!!!!!go to settings');
-    console.error("The following error occurred: "+error);
-});
-
-    setTimeout(foo, 2000);
-}
-
-foo();
 
     
     
