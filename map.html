@@ -335,15 +335,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 // test
 
-cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
-    if(!enabled{
-	alert('go to settings');
-        cordova.plugins.diagnostic.switchToLocationSettings();
-    }
-}, function(error){
-	alert("The following error occurred: "+error);
-    console.error("The following error occurred: "+error);
-});
+
 
 cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
 	alert('go to settings');
