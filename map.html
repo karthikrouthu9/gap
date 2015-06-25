@@ -306,9 +306,12 @@ function initialize() {
 }
 
 function handleNoGeolocation(errorFlag) {
+	alert("Map Error");
   if (errorFlag) {
+  	alert("Map Error 1");
     var content = 'Error: The Geolocation service failed.';
   } else {
+  	alert("Map Error 2");
     var content = 'Error: Your browser doesn\'t support geolocation.';
   }
 
