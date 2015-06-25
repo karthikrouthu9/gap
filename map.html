@@ -283,13 +283,15 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-	var loc_on=false;
+
+
   // Try HTML5 geolocation
   if(navigator.geolocation) {
 	
 
     navigator.geolocation.getCurrentPosition(function(position) {
 	loc_on=true;
+		alert('loc 202');
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
@@ -306,7 +308,6 @@ function initialize() {
     });
 
   } else {
-    alert('loc 103');
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
@@ -314,12 +315,10 @@ function initialize() {
 }
 
 function handleNoGeolocation(errorFlag) {
-	alert("Map Error");
+
   if (errorFlag) {
-  	alert("Map Error 1");
     var content = 'Error: The Geolocation service failed.';
   } else {
-  	alert("Map Error 2");
     var content = 'Error: Your browser doesn\'t support geolocation.';
   }
 
@@ -332,7 +331,7 @@ function handleNoGeolocation(errorFlag) {
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
-
+	var loc_on=false;
 google.maps.event.addDomListener(window, 'load', initialize);
 
   alert(loc_on);
