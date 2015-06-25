@@ -283,14 +283,14 @@ function initialize() {
   alert('loc 101');
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-
+	var loc_on=false;
   // Try HTML5 geolocation
   if(navigator.geolocation) {
     alert('loc 102');
 	
-	
-    var data=navigator.geolocation.getCurrentPosition(function(position) {
-	   
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+	   loc_on=true;
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
@@ -305,12 +305,13 @@ function initialize() {
 
       handleNoGeolocation(true);
     });
-	alert(data);
+
   } else {
     alert('loc 103');
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
+  alert(loc_on);
 }
 
 function handleNoGeolocation(errorFlag) {
