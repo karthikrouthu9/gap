@@ -10,6 +10,8 @@
     		<link rel="stylesheet" href="bootstrap-3.3.4/css/bootstrap.min.css" media="screen" type="text/css" />
      		<script src="bootstrap-3.3.4/js/bootstrap.min.js"></script>
     		<script src="register.js">
+    		<script src="bootbox.min.js">
+    			<script src="bootbox.js">
     		<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
     		<script src="jquery-1.11.2.js"></script>
     		<script type="text/javascript" src="phonegap.js"></script>
@@ -73,6 +75,9 @@ cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
 if(enabled==0)
 	{
 	alert('Location is disabled. Please enable GPS.');
+	bootbox.confirm("Location is disabled. Please enable GPS.", function(result) {
+  Example.show("Confirm result: "+result);
+}); 
 	 cordova.plugins.diagnostic.switchToLocationSettings();
 	
 	}else
