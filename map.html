@@ -280,20 +280,16 @@ function initialize() {
   var mapOptions = {
     zoom: 15
   };
-  alert('loc 101');
+
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 	var loc_on=false;
   // Try HTML5 geolocation
   if(navigator.geolocation) {
-    alert('loc 102');
 	
 
     navigator.geolocation.getCurrentPosition(function(position) {
-  
 	loc_on=true;
-  alert(loc_on);
-	
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
@@ -339,6 +335,7 @@ function handleNoGeolocation(errorFlag) {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+  alert(loc_on);
 
 window.onload = function(){date()}, setInterval(function(){date()}, 1000);
 
