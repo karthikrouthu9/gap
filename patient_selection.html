@@ -32,7 +32,14 @@
 
 	navigator.geolocation.getCurrentPosition(onSuccess, onError);
    
-
+function onSuccess() {
+	
+   alert(GPS ON);
+      
+  }
+   function onError() {
+		alert(GPS OFF);
+				}
 
    var device_uuid = device.uuid;
    
