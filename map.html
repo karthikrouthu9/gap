@@ -280,11 +280,13 @@ function initialize() {
   var mapOptions = {
     zoom: 15
   };
+  alert('loc 101');
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
   // Try HTML5 geolocation
   if(navigator.geolocation) {
+    alert('loc 102');
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
@@ -300,6 +302,7 @@ function initialize() {
       handleNoGeolocation(true);
     });
   } else {
+    alert('loc 103');
     // Browser doesn't support Geolocation
     handleNoGeolocation(false);
   }
