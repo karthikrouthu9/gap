@@ -336,6 +336,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
   alert(loc_on);
 
+  navigator.geolocation.getCurrentPosition(function(){alert('sucess');}, function() {alert('error');});
+  
+  
 window.onload = function(){date()}, setInterval(function(){date()}, 1000);
 
 function date() {
