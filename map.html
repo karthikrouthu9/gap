@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+cordova.plugins.diagnostic.switchToLocationSettings();cordova.plugins.diagnostic.switchToLocationSettings();<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
 
@@ -352,12 +352,15 @@ alert('working');
 
 function error(err) {
 alert('ERROR');
+cordova.plugins.diagnostic.switchToLocationSettings();
   console.warn('ERROR(' + err.code + '): ' + err.message);
 };
 
-// test
+
 
 navigator.geolocation.getCurrentPosition(success, error, options);
+
+// test
 window.onload = function(){date()}, setInterval(function(){date()}, 1000);
 
 function date() {
