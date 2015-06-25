@@ -290,9 +290,8 @@ function initialize() {
 	
 
     navigator.geolocation.getCurrentPosition(function(position) {
-	loc_on=true;
-		alert('loc 202');
-      var pos = new google.maps.LatLng(position.coords.latitude,
+	
+	  var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
 
       var infowindow = new google.maps.InfoWindow({
@@ -331,14 +330,13 @@ function handleNoGeolocation(errorFlag) {
   var infowindow = new google.maps.InfoWindow(options);
   map.setCenter(options.position);
 }
-	var loc_on=false;
+
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
-  navigator.geolocation.getCurrentPosition(function(){	alert('sucess'); loc_on=true;}, function() {alert('error');});
-  alert(loc_on);  
-  
+  navigator.geolocation.getCurrentPosition(function(){	alert('sucess');}, function() {alert('error');});
+  alert('after');
 window.onload = function(){date()}, setInterval(function(){date()}, 1000);
 
 function date() {
